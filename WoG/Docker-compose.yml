@@ -1,0 +1,6 @@
+version: '3'
+services:
+ flask_server:
+  image: wog_flask_server:latest 
+  ports:
+  - "8777:8777"
