@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3-alpine
 RUN mkdir dev_files
 RUN cd dev_files
 WORKDIR dev_files
