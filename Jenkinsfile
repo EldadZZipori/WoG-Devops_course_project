@@ -34,31 +34,26 @@ pipeline {
       steps {
         echo '[+] Tesing MainScore with e2e.py'
         dir('/Users/eldadzipori/Documents/GitHub/WoG-Devops_course_project'){
-           sh 'python --version'
-           script{
-            try {
-            sh 'python3 e2e.py' 
-           }
-           catch(e){
-            echo 'Mainscore test failed - see logs for more information'
-            throw e
-            
-           } 
-           }
-           
+           sh 'python --version'     
+           sh 'python3 e2e.py' 
         }
       }
     }
-
-    stage('Finalize') {
-      steps {
+  }
+  post {
+    always {
         echo '[+] Closing everything'
         dir('/Users/eldadzipori/Documents/GitHub/WoG-Devops_course_project'){
            sh 'docker-compose stop'
            sh 'docker-compose down'
         }
-      }
     }
 
+    success {
+      echo '[+] The pipeline ran successfully'
+    }
+    failure {
+      echo '[-] The pipeline has failed'
+    }
   }
 }
