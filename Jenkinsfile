@@ -33,7 +33,7 @@ pipeline {
     stage('Test') {
       steps {
         echo '[+] Tesing MainScore with e2e.py'
-        dir('/Users/eldadzipori/Documents/GitHub/WoG-Devops_course_project'){
+        dir('/Users/eldadzipori/Documents/GitHub/WoG-Devops_course_project/tests'){
            sh 'python --version'     
            sh 'python3 e2e.py' 
         }
