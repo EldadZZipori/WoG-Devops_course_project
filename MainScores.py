@@ -12,6 +12,7 @@ from flask import Flask
 # read https://www.geeksforgeeks.org/__name__-special-variable-python/ for more information about __name__
 app = Flask(__name__)
 
+import MemoryGame
 
 # inserts our functionality to the app.route function
 # the functionality returns an html code for showing the user's score
@@ -47,4 +48,4 @@ if __name__ == '__main__':
     # starts the server on 0.0.0.0 ip with accessible through port 8777
     # debug lets the server reload when it detects code change and provides a debugger if something goes wrong
     # threaded mode enables handling more than one request at a time
-    app.run(host='0.0.0.0', debug=True, threaded=True, port=8777)
+    app.run(host='0.0.0.0', debug=True, threaded=True, port=8080)

@@ -6,6 +6,11 @@ import os
 GUESS_LOW_END = 1
 GUESS_HIGH_END = 101
 SCORES_FILE_NAME = "Scores.txt"
+CONN_HOST = "127.0.0.1"
+CONN_PORT = 3306
+CONN_USER = "root"
+CONN_PASSWORD = "pswd"
+CONN_DB = "games"
 ERROR_MESSAGE = "Something went wrong.."
 WELCOME_STATEMENT = '''
 Hello <name> and welcome to the World of Games (WoG).

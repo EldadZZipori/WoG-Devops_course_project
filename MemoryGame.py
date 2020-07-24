@@ -1,5 +1,5 @@
 import random, time, Utils
-
+from __main__ import app
 
 # this module sets the functionality and the game-play of the memory game
 # this game show a sequence of numbers to the user
@@ -50,8 +50,10 @@ def is_list_equal(list_a: list, list_b: list) -> bool:
 # returns:
 #   True - if user won
 #   False - if user lost
+@app.route('/test')
 def play(difficulty: int) -> bool:
 
     computer_generated_sequence = generate_sequence(difficulty)
     users_sequence = get_list_from_user(difficulty)
-    return is_list_equal(computer_generated_sequence, users_sequence)
+    #return is_list_equal(computer_generated_sequence, users_sequence)
+    return 1
